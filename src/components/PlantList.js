@@ -7,7 +7,7 @@ function PlantList() {
 
   useEffect(() => {
     // Fetch the plant data when the component mounts
-    fetch('http://localhost:6001/plants')
+    fetch('https://react-hooks-cc-plantshop-uj93.onrender.com/plants')
       .then((r) => r.json())
       .then((data) => setPlants(data))
       .catch((error) => console.error('Error fetching plants:', error));
@@ -21,7 +21,7 @@ function PlantList() {
   // Handle updating the price of a plant
   function handlePriceUpdate(id, newPrice) {
     // Send patch request to update the price
-    fetch(`http://localhost:6001/plants/${id}`, {
+    fetch(`https://react-hooks-cc-plantshop-uj93.onrender.com/plants/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function PlantList() {
   // Handle deleting a plant
   function handleDelete(id) {
     // Send DELETE request to remove the plant
-    fetch(`http://localhost:6001/plants/${id}`, {
+    fetch(`https://react-hooks-cc-plantshop-uj93.onrender.com/plants/${id}`, {
       method: 'DELETE',
     })
       .then(() => {
